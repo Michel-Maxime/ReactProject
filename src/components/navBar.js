@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const pages = ["Fav", "Feed"];
 
@@ -22,6 +23,8 @@ const ResponsiveAppBar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const heroesFav = useSelector((state) => state.heroes.heroesFav);
 
   return (
     <AppBar position="static">
@@ -73,7 +76,9 @@ const ResponsiveAppBar = () => {
                 component={Link}
                 to={`/fav`}
               >
-                <Typography textAlign="center">Fav</Typography>
+                <Typography textAlign="center">
+                  Fav ({heroesFav.length})
+                </Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -100,7 +105,7 @@ const ResponsiveAppBar = () => {
               to={`/fav`}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              fav
+              Fav ({heroesFav.length})
             </Button>
           </Box>
         </Toolbar>
