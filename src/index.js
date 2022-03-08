@@ -52,8 +52,6 @@ sagaMiddleware.run(rootSaga);
 
 let persistor = persistStore(store);
 
-//await persistor.purge();
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
