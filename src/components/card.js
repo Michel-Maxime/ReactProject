@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useSelector, useDispatch } from "react-redux";
-//import { Toggle } from "../redux/favoriteSlice";
+import { Toggle } from "../redux/heroesSlice.js";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -10,14 +8,13 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
-const url = "https://image.tmdb.org/t/p/original";
+import { useDispatch } from "react-redux";
 
 export default function Carde({ title, id, img, details }) {
   const dispatch = useDispatch();
 
   const favClick = () => {
-    //dispatch(Toggle(id));
+    dispatch(Toggle(id));
   };
 
   return (

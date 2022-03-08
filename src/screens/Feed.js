@@ -6,15 +6,13 @@ import Carde from "../components/card.js";
 
 export default function Feed() {
   const dispatch = useDispatch();
+
+  //pas ouf pck au debut charge l'element juste avant(fait un petit bug visuel)
   const heroes = useSelector((state) => state.heroes.heroes);
 
   useEffect(() => {
     dispatch({ type: "FETCH_HEROES" });
   }, []);
-
-  useEffect(() => {
-    console.log(heroes);
-  }, [heroes]);
 
   const [filter, setFilter] = useState("");
   return (
@@ -30,17 +28,18 @@ export default function Feed() {
         }}
       >
         {heroes
-        .filter((dt) => dt.name.match(new RegExp(filter, "i")))
-        .map((dt) => {
-          return (
-            <Carde
-              key={dt.id}
-              title={dt.name}
-              img={dt.images.sm}
-              details={dt.connections.relatives}
-            />
-          );
-        })}
+          .filter((dt) => dt.name.match(new RegExp(filter, "i")))
+          .map((dt) => {
+            return (
+              <Carde
+                key={dt.id}
+                id={dt.id}
+                title={dt.name}
+                img={dt.images.sm}
+                details={dt.connections.relatives}
+              />
+            );
+          })}
       </Box>
     </>
   );
