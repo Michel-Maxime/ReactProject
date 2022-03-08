@@ -29,7 +29,9 @@ export default function Feed() {
           flexWrap: "wrap",
         }}
       >
-        {heroes.map((dt) => {
+        {heroes
+        .filter((dt) => dt.name.match(new RegExp(filter, "i")))
+        .map((dt) => {
           return (
             <Carde
               key={dt.id}
