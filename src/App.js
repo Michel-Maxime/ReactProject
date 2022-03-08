@@ -7,11 +7,9 @@ import Fav from "./screens/Fav";
 import ResponsiveAppBar from "./components/navBar";
 
 function App() {
-  const heroesFav = useSelector((state) => state.heroes.heroesFav);
   return (
     <BrowserRouter>
       <ResponsiveAppBar />
-      <h1> My fav : {heroesFav?.length}</h1>
       <Routes>
         <Route path="/" element={<Feed />} />
         <Route path="/about/:id" element={<About />} />
