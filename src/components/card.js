@@ -22,7 +22,7 @@ export default function Carde({ title, id, img, details }) {
 
   return (
     <>
-      <Card sx={{ maxWidth: 345, margin: 1 }}>
+      <Card sx={{ maxWidth: 345, minWidth: 345, margin: 1 }}>
         <CardMedia
           component="img"
           alt="green iguana"
