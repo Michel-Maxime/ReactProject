@@ -77,7 +77,7 @@ const ResponsiveAppBar = () => {
                 to={`/fav`}
               >
                 <Typography textAlign="center">
-                  Fav ({heroesFav.length})
+                  Fav ({heroesFav?.length || 0})
                 </Typography>
               </MenuItem>
             </Menu>
@@ -105,7 +105,7 @@ const ResponsiveAppBar = () => {
               to={`/fav`}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              Fav ({heroesFav.length})
+              Fav ({heroesFav?.length || 0})
             </Button>
           </Box>
         </Toolbar>

@@ -15,7 +15,7 @@ export default function Fav() {
       }}
     >
       {heroes
-        .filter((dt) => heroesFav.includes(dt.id))
+        .filter((dt) => heroesFav?.includes(dt.id))
         .map((dt) => {
           return (
             <Carde

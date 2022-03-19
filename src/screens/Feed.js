@@ -7,7 +7,6 @@ import Carde from "../components/card.js";
 export default function Feed() {
   const dispatch = useDispatch();
 
-  //pas ouf pck au debut charge l'element juste avant(fait un petit bug visuel)
   const heroes = useSelector((state) => state.heroes.heroes);
 
   useEffect(() => {

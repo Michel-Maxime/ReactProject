@@ -18,7 +18,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Carde({ title, id, img, details }) {
   const dispatch = useDispatch();
-  const heroesFav = useSelector((state) => state.heroes.heroesFav);
+  const heroesFav = useSelector((state) => state.heroes?.heroesFav);
 
   const favClick = () => {
     dispatch(Toggle(id));
@@ -52,7 +52,7 @@ export default function Carde({ title, id, img, details }) {
             Learn More
           </Button>
           <div>
-            {heroesFav.includes(id) ? (
+            {heroesFav?.includes(id) ? (
               <FavoriteIcon onClick={() => favClick()} />
             ) : (
               <FavoriteBorderIcon onClick={() => favClick()} />
