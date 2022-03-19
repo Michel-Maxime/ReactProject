@@ -51,11 +51,13 @@ export default function Carde({ title, id, img, details }) {
           <Button size="small" component={Link} to={`/about/${id}`}>
             Learn More
           </Button>
-          {heroesFav.includes(id) ? (
-            <FavoriteIcon onClick={() => favClick()} />
-          ) : (
-            <FavoriteBorderIcon onClick={() => favClick()} />
-          )}
+          <div>
+            {heroesFav.includes(id) ? (
+              <FavoriteIcon onClick={() => favClick()} />
+            ) : (
+              <FavoriteBorderIcon onClick={() => favClick()} />
+            )}
+          </div>
         </CardActions>
       </Card>
     </>
