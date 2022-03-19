@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 
 export default function CenterInput({ text, textSet }) {
   const onChange = (event) => {
