@@ -8,10 +8,17 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import classNames from "classnames";
+import cardStyles from "../styles/card.style.js";
+import Rating from "@mui/material/Rating";
+
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function Carde({ title, id, img, details }) {
   const dispatch = useDispatch();
+  const heroesFav = useSelector((state) => state.heroes?.heroesFav);
 
   const favClick = () => {
     dispatch(Toggle(id));
@@ -44,9 +51,13 @@ export default function Carde({ title, id, img, details }) {
           <Button size="small" component={Link} to={`/about/${id}`}>
             Learn More
           </Button>
-          <Button size="small" onClick={() => favClick()}>
-            Add/Remove to fav
-          </Button>
+          <div>
+            {heroesFav?.includes(id) ? (
+              <FavoriteIcon onClick={() => favClick()} />
+            ) : (
+              <FavoriteBorderIcon onClick={() => favClick()} />
+            )}
+          </div>
         </CardActions>
       </Card>
     </>
