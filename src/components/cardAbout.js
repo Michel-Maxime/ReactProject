@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
-
 import { Toggle } from "../redux/heroesSlice.js";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -23,37 +20,29 @@ export default function Carde({ title, id, img, details }) {
 
   return (
     <>
-      <Card sx={{ maxWidth: 345, minWidth: 345, margin: 1 }}>
+      <Card sx={{ maxWidth: 500, minWidth: 500, margin: 1 }}>
         <CardMedia
           component="img"
           alt="green iguana"
-          height="140"
+          height="500"
           image={img}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
+            <div style={{ float: "right", marginTop: 4.5 }}>
+              {heroesFav?.includes(id) ? (
+                <FavoriteIcon onClick={() => favClick()} />
+              ) : (
+                <FavoriteBorderIcon onClick={() => favClick()} />
+              )}
+            </div>
           </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            overflow={"hidden"}
-            whiteSpace={"nowrap"}
-            textOverflow={"ellipsis"}
-          >
+
+          <Typography variant="body2" color="text.secondary">
             {details}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small" component={Link} to={`/about/${id}`}>
-            Learn More
-          </Button>
-          {heroesFav?.includes(id) ? (
-            <FavoriteIcon onClick={() => favClick()} />
-          ) : (
-            <FavoriteBorderIcon onClick={() => favClick()} />
-          )}
-        </CardActions>
       </Card>
     </>
   );

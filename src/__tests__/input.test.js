@@ -2,9 +2,9 @@ import { render, screen } from "@testing-library/react";
 import Input from "../components/input";
 
 describe("Input", () => {
-  it("renders Film search", () => {
+  it("renders Heroe search", () => {
     render(<Input />);
-    const linkElement = screen.getByLabelText("Film search");
+    const linkElement = screen.getByLabelText("Heroe search");
     expect(linkElement).toBeInTheDocument();
   });
 
