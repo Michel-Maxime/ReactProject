@@ -12,8 +12,6 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const pages = ["Fav", "Feed"];
-
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 

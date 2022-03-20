@@ -1,5 +1,4 @@
 import { Box } from "@mui/system";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Carde from "../components/cardAbout";
