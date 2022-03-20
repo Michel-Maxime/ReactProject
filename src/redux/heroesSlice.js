@@ -11,7 +11,6 @@ export const heroesSlice = createSlice({
       state.heroes = heroe.payload;
     },
     Toggle: (state, heroeId) => {
-      console.log(state.heroesFav);
       !state.heroesFav?.includes(heroeId.payload)
         ? state.heroesFav?.push(heroeId.payload)
         : (state.heroesFav = state.heroesFav?.filter(

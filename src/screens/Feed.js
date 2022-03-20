@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CenterInput from "../components/input";
 import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@mui/system";
-import Carde from "../components/card.js";
+import Carde from "../components/card";
 
 export default function Feed() {
   const dispatch = useDispatch();

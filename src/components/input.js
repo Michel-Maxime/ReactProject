@@ -15,7 +15,7 @@ export default function CenterInput({ text, textSet }) {
       {" "}
       <TextField
         id="outlined-basic"
-        label="Film search"
+        label="Heroe search"
         value={text}
         onChange={onChange}
         variant="outlined"
